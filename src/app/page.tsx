@@ -1,14 +1,13 @@
-import { GET_REPOSITORY } from "@/gql/queries/getRepository";
-import { getClient } from "@/lib/ApolloClient";
+"use client";
 
-export default async function HomePage() {
-  const { data } = await getClient().query({
-    query: GET_REPOSITORY,
-    variables: {
-      username: "JIY00N2",
-      repository: "yoon-log",
-    },
-  });
+import Link from "next/link";
 
-  return <div>{JSON.stringify(data)}</div>;
+export default function HomePage() {
+  return (
+    <Link
+      href={`https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}`}
+    >
+      나의 recap 생성하기
+    </Link>
+  );
 }

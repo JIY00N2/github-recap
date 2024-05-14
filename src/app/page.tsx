@@ -7,7 +7,7 @@ export default function HomePage() {
     <Link
       href={`https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}`}
     >
-      나의 recap 생성하기
+      나의 Recap 보기
     </Link>
   );
 }

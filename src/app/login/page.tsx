@@ -1,15 +1,10 @@
 "use client";
 
-import { GET_VIEWER } from "@/gql/queries/getViewer";
+import { GET_VIEWER } from "@/graphql/queries/getViewer";
+import { ViewerQuery } from "@/graphql/schema";
 import { useSuspenseQuery } from "@apollo/client";
 import { redirect, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-
-interface ViewerData {
-  viewer: {
-    login: string;
-  };
-}
 
 export default function LoginPage() {
   const searchParams = useSearchParams();
@@ -19,7 +14,7 @@ export default function LoginPage() {
     data: {
       viewer: { login: userId },
     },
-  } = useSuspenseQuery<ViewerData>(GET_VIEWER);
+  } = useSuspenseQuery<ViewerQuery>(GET_VIEWER);
 
   useEffect(() => {
     if (accessToken) {

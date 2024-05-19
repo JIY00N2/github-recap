@@ -1,7 +1,7 @@
 "use client";
 
+import { ViewerQuery } from "@/graphql/helpers/generated";
 import { GET_VIEWER } from "@/graphql/queries/getViewer";
-import { ViewerQuery } from "@/graphql/schema";
 import { useSuspenseQuery } from "@apollo/client";
 import { redirect, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";

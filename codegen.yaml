@@ -7,7 +7,7 @@ documents:
   # - "./src/graphql/mutations/*.graphql"
   - "./src/graphql/queries/*.ts"
 generates:
-  ./src/graphql/schema/index.ts:
+  ./src/graphql/helpers/generated.ts:
     plugins:
       - typescript
       - typescript-operations
